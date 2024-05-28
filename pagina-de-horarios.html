@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horários das Rotas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+            text-align: center; /* Adicionado para centralizar o texto */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-left: 1px solid #ddd; /* Adicionado para borda esquerda da tabela */
+            border-right: 1px solid #ddd; /* Adicionado para borda direita da tabela */
+        }
+
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .rota {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Horários das Rotas</h1>
+    </header>
+
+    <div id="horarios">
+        <select id="route-select">
+            <option value="unievangelica">Unievangelica</option>
+            <option value="parque-ipiranga">Parque Ipiranga</option>
+            <option value="brasil-park-shopping">Brasil Park Shopping</option>
+        </select>
+
+        <select id="day-select">
+            <option value="seg-sex">Segunda a Sexta</option>
+            <option value="fim-semana">Final de Semana</option>
+        </select>
+
+        <div id="rota-unievangelica" class="rota">
+            <h3>Unievangelica</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Partida</th>
+                        <th>Chegada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Horários de segunda a sexta -->
+                    <tr class="seg-sex">
+                        <td>06:00</td>
+                        <td>07:00</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>07:10</td>
+                        <td>08:10</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>08:15</td>
+                        <td>09:20</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>09:40</td>
+                        <td>10:50</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>11:15</td>
+                        <td>12:10</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>12:20</td>
+                        <td>13:30</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>13:40</td>
+                        <td>14:30</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>14:40</td>
+                        <td>16:00</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>16:10</td>
+                        <td>17:30</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>17:40</td>
+                        <td>18:50</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>19:00</td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>22:00</td>
+                        <td>23:00</td>
+                    </tr>
+                    <!-- Adicione mais linhas conforme necessário -->
+                    <!-- Horários de final de semana -->
+                    <tr class="fim-semana" style="display: none;">
+                        <td>07:00</td>
+                        <td>08:00</td>
+                    </tr>
+                    <tr class="fim-semana" style="display: none;">
+                        <td>09:10</td>
+                        <td>10:00</td>
+                    </tr>
+                    <tr class="fim-semana" style="display: none;">
+                        <td>10:30</td>
+                        <td>11:40</td>
+                    </tr>
+                    <tr class="fim-semana" style="display: none;">
+                        <td>12:30</td>
+                        <td>13:30</td>
+                    </tr>
+                    <!-- Adicione mais linhas conforme necessário -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="rota-parque-ipiranga" class="rota">
+            <h3>Parque Ipiranga</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Partida</th>
+                        <th>Chegada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Horários de segunda a sexta -->
+                    <tr class="seg-sex">
+                        <td>06:00</td>
+                        <td>07:00</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>07:10</td>
+                        <td>08:10</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>08:15</td>
+                        <td>09:20</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>09:40</td>
+                        <td>10:50</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>11:15</td>
+                        <td>12:10</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>12:20</td>
+                        <td>13:30</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>13:40</td>
+                        <td>14:30</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>14:40</td>
+                        <td>16:00</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>16:10</td>
+                        <td>17:30</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>17:40</td>
+                        <td>18:50</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>19:00</td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>22:00</td>
+                        <td>23:00</td>
+                    </tr>
+                    <!-- Adicione mais linhas conforme necessário -->
+                    <!-- Horários de final de semana -->
+                    <tr class="fim-semana" style="display: none;">
+                        <td>07:00</td>
+                        <td>08:00</td>
+                    </tr>
+                    <tr class="fim-semana" style="display: none;">
+                        <td>09:10</td>
+                        <td>10:00</td>
+                    </tr>
+                    <tr class="fim-semana" style="display: none;">
+                        <td>10:30</td>
+                        <td>11:40</td>
+                    </tr>
+                    <tr class="fim-semana" style="display: none;">
+                        <td>12:30</td>
+                        <td>13:30</td>
+                    </tr>
+                    <!-- Adicione mais linhas conforme necessário -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="rota-brasil-park-shopping" class="rota">
+            <h3>Brasil Park Shopping</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Partida</th>
+                        <th>Chegada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Horários de segunda a sexta -->
+                    <tr class="seg-sex">
+                        <td>06:00</td>
+                        <td>07:00</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>07:10</td>
+                        <td>08:10</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>08:15</td>
+                        <td>09:20</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>09:40</td>
+                        <td>10:50</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>11:15</td>
+                        <td>12:10</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>12:20</td>
+                        <td>13:30</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>13:40</td>
+                        <td>14:30</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>14:40</td>
+                        <td>16:00</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>16:10</td>
+                        <td>17:30</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>17:40</td>
+                        <td>18:50</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>19:00</td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr class="seg-sex">
+                        <td>22:00</td>
+                        <td>23:00</td>
+                    </tr>
+                    <!-- Adicione mais linhas conforme necessário -->
+                    <!-- Horários de final de semana -->
+                    <tr class="fim-semana" style="display: none;">
+                        <td>07:00</td>
+                        <td>08:00</td>
+                    </tr>
+                    <tr class="fim-semana" style="display: none;">
+                        <td>09:10</td>
+                        <td>10:00</td>
+                    </tr>
+                    <tr class="fim-semana" style="display: none;">
+                        <td>10:30</td>
+                        <td>11:40</td>
+                    </tr>
+                    <tr class="fim-semana" style="display: none;">
+                        <td>12:30</td>
+                        <td>13:30</td>
+                    </tr>
+                    <!-- Adicione mais linhas conforme necessário -->
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <script>
+        document.getElementById('route-select').addEventListener('change', function() {
+            const selectedRoute = this.value;
+            const routes = document.querySelectorAll('.rota');
+            routes.forEach(function(route) {
+                if (route.id === 'rota-' + selectedRoute) {
+                    route.style.display =  'block';
+                } else {
+                    route.style.display = 'none';
+                }
+            });
+        });
+
+        document.getElementById('day-select').addEventListener('change', function() {
+            const selectedDay = this.value;
+            const rows = document.querySelectorAll('.rota tbody tr');
+            rows.forEach(function(row) {
+                if (row.classList.contains(selectedDay)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script>
+        // Função para exibir a rota correspondente à opção selecionada inicialmente
+        function showInitialRoute() {
+            const selectedRoute = document.getElementById('route-select').value;
+            const selectedDay = document.getElementById('day-select').value;
+            const routes = document.querySelectorAll('.rota');
+            
+            routes.forEach(function(route) {
+                if (route.id === 'rota-' + selectedRoute) {
+                    route.style.display = 'block';
+                } else {
+                    route.style.display = 'none';
+                }
+            });
+    
+            // Exibir apenas os horários correspondentes ao dia selecionado
+            const rows = document.querySelectorAll('.rota tbody tr');
+            rows.forEach(function(row) {
+                if (row.classList.contains(selectedDay)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    
+        // Adiciona o evento de inicialização para exibir a rota inicialmente selecionada
+        document.addEventListener('DOMContentLoaded', showInitialRoute);
+    
+        // Adiciona eventos de mudança para exibir as rotas e horários correspondentes às seleções
+        document.getElementById('route-select').addEventListener('change', function() {
+            const selectedRoute = this.value;
+            const routes = document.querySelectorAll('.rota');
+            routes.forEach(function(route) {
+                if (route.id === 'rota-' + selectedRoute) {
+                    route.style.display = 'block';
+                } else {
+                    route.style.display = 'none';
+                }
+            });
+        });
+    
+        document.getElementById('day-select').addEventListener('change', function() {
+            const selectedDay = this.value;
+            const rows = document.querySelectorAll('.rota tbody tr');
+            rows.forEach(function(row) {
+                if (row.classList.contains(selectedDay)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
+
+

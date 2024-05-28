@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindBus</title>   
+    <!-- Folhas de estilo -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body> 
+    <header>
+        <!-- Adicionar ícone ao lado do título -->
+        <h1><i class="fas fa-bus"></i> FindBus</h1>
+        <div id="route-selector" class="hidden"> 
+            <select id="route-select">
+                <option value="">Selecione uma rota</option>
+                <option value="rota1">Unievangelica</option>
+                <option value="rota2">Parque Ipiranga</option>
+                <option value="rota3">Brasil Park Shopping</option>
+            </select>
+            <button id="confirm-route-btn">Confirmar Rota</button>
+            <button id="view-schedule-btn">Ver Horários</button> <!-- Novo botão -->
+        </div> 
+    </header>
+    <!-- Div para o mapa -->
+    <div id="map"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
